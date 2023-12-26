@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bookshelf Apps</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <header>
+            <h1 class="title-page">Bookshelf Apps</h1>
+        </header>
+        <div class="container">
+            <div class="title">Masukkan Data Buku</div>
+            <div class="content">
+                <form id="inputBook">
+                    <div class="user-details">
+                        <div class="input-box" id="sectionTitle">
+                            <span class="details">Judul</span>
+                            <input id="inputBookTitle" type="text" placeholder="Masukkan judul" required>
+                            <small class="error-display" id="errorTitle">Wajib Diisi</small>
+                        </div>
+                        <div class="input-box" id="sectionAuthor">
+                            <span class="details">Penulis</span>
+                            <input id="inputBookAuthor" type="text" placeholder="Masukkan Penulis" required>
+                            <small class="error-display" id="errorAuthor">Wajib Diisi</small>
+                        </div>
+                        <div class="input-box" id="sectionCategory">
+                            <span class="details">Kategori</span>
+                            <input id="inputBookCategory" type="text" placeholder="Masukkan Category" required>
+                            <small class="error-display" id="errorCategory">Wajib Diisi</small>
+                        </div>
+                        <div class="input-box" id="sectionYear">
+                            <span class="details">Tahun</span>
+                            <input id="inputBookYear" type="text" placeholder="Masukkan Tahun"  oninput="filterNonNumeric(this)" required>
+                            <small class="error-display" id="errorYear">Wajib Diisi</small>
+                        </div>
+                        <div class="input-box-checkbox">
+                            <span class="details">Selesai Dibaca</span>
+                            <input id="inputBookIsComplete" type="checkbox">
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button id="submitBook" type="button">Tambah Buku</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container mt">
+            <div class="title">Cari Buku</div>
+            <div class="content">
+                <form id="searchBook">
+                    <div class="user-details">
+                        <div class="input-box d-flex">
+                            <input id="searchBookTitle" type="text" placeholder="Cari berdasarkan judul">
+                            <button class="btn btn-primary ml" id="searchSubmit" type="submit">
+                                <ion-icon name="search-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="side-container">
+            <div class="container w-50 mr">
+                <div class="title">Belum Dibaca</div>
+                <div class="content">
+                    <div id="uncompletedBookList"></div>
+                </div>
+            </div>
+            <div class="container w-50">
+                <div class="title">Selesai Dibaca</div>
+                <div class="content">
+                    <div id="completedBookList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+
+</html>
